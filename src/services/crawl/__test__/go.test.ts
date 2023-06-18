@@ -4,11 +4,11 @@ import {
   getGoWebFrameworkReadme,
   getNameAndUrlFromFirstColumn,
   parseFromRawToData,
-} from '../today/go';
+} from '../web-framework/go';
 
 import { raw } from '../__mocks__/go.mock';
 
-describe(`Crawl today's trend datas`, () => {
+describe(`Crawl go framework data`, () => {
   it('should be go web framework raw', async () => {
     const raw = await getGoWebFrameworkReadme();
 
