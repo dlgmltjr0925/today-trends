@@ -1,0 +1,17 @@
+{
+  "go": {
+    "gin": {
+      "url": "https://github.com/gin-gonic/gin",
+      "star": 69466,
+      "fork": 7536,
+      "issues": 696
+    },
+    "beego": {
+      "url": "https://github.com/beego/beego",
+      "star": 29864,
+      "fork": 5595,
+      "issues": 13
+    }
+  },
+  "javascript": {}
+}
