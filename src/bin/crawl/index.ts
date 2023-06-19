@@ -1,3 +1,3 @@
-import { crawl } from "../../services/crawl";
+import { crawl } from '../../services/crawl';
 
 crawl();
