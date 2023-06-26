@@ -1,13 +1,14 @@
 #!/bin/sh
-mkdir -p ~/.ssh
-echo ${SSH_PRIVATE_KEY} > ~/.ssh/id_rsa
+mkdir ~/.ssh
+echo "-----BEGIN OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
+echo ${SSH_PRIVATE_KEY} | tr ' ' '\n' >> ~/.ssh/id_rsa
+echo "-----END OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
-# config git
-git config --global user.email "dlgmltjr0925@gmail.com" 
-git config --global user.name "HeeSeok Lee"
-
 # Clone repository
+echo "Host github.com\n\tStrictHostKeyChecking no" > ~/.ssh/config
+chmod 400 ~/.ssh/config
+
 git clone git@github.com:dlgmltjr0925/today-trends.git
 cd today-trends
 
@@ -23,6 +24,10 @@ if [ -z "$git_status" ]; then
 else
   echo "Git working tree has changes:"
   echo "$git_status"
+    
+  # config git
+  git config --global user.email "dlgmltjr0925@gmail.com" 
+  git config --global user.name "HeeSeok Lee"
 
   git add .
   git commit -m "chores: update data"
