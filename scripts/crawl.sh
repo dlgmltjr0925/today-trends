@@ -2,10 +2,11 @@
 # config git
 git config --global user.email "dlgmltjr0925@gmail.com" 
 git config --global user.name "HeeSeok Lee"
+git config --global credential.helper '!f() { sleep 1; echo "username=${GITHUB_USERNAME}"; echo "password=${GITHUB_PASSWORD}";^C; f'
 
 # Clone repository
 git clone https://github.com/dlgmltjr0925/today-trends.git
-cd today-trends
+cd today-trendsc
 
 # Install node_modules
 yarn && yarn crawl
