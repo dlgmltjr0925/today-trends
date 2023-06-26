@@ -1,12 +1,15 @@
 #!/bin/sh
+mkdir -p ~/.ssh
+echo ${SSH_PRIVATE_KEY} > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+
 # config git
 git config --global user.email "dlgmltjr0925@gmail.com" 
 git config --global user.name "HeeSeok Lee"
-git config --global credential.helper '!f() { sleep 1; echo "username=${GITHUB_USERNAME}"; echo "password=${GITHUB_PASSWORD}";^C; f'
 
 # Clone repository
-git clone https://github.com/dlgmltjr0925/today-trends.git
-cd today-trendsc
+git clone git@github.com:dlgmltjr0925/today-trends.git
+cd today-trends
 
 # Install node_modules
 yarn && yarn crawl
